@@ -1,4 +1,8 @@
-cmake_minimum_required(VERSION 2.8.12)
-project(pybrg)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/pybind11)
-pybind11_add_module(pybrg ./src/wrapper_bindings.cpp)
+cmake_minimum_required(VERSION 3.15)
+project(pybrg LANGUAGES CXX)
+
+find_package(pybind11 CONFIG REQUIRED)
+
+pybind11_add_module(pybrg src/wrapper_bindings.cpp)
+
+install(TARGETS pybrg DESTINATION .)

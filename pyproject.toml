@@ -1,0 +1,38 @@
+[build-system]
+requires = ["scikit-build-core>=0.10", "pybind11>=2.12"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "bigrandomgraphs"
+version = "0.0.4"
+description = "Python package for fast creation of large random graphs"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Jason P. Smith" }]
+requires-python = ">=3.9"
+
+dependencies = [
+    "numpy",
+    "scipy",
+    "networkx",
+    "numba",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.pytest.ini_options]
+python_files = ["test.py", "test_*.py"]
+
+[tool.scikit-build]
+minimum-version = "0.10"
+cmake.version = ">=3.15"
+wheel.packages = ["bigrandomgraphs"]
+
+[tool.cibuildwheel]
+build = ["cp39-*", "cp310-*", "cp311-*", "cp312-*", "cp313-*"]
+skip = ["*-musllinux_*", "*_i686"]
+test-command = 'python -c "import pybrg"'
+
+[tool.cibuildwheel.macos]
+archs = ["x86_64", "arm64"]
