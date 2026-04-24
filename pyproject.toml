@@ -13,9 +13,6 @@ requires-python = ">=3.9"
 
 dependencies = [
     "numpy",
-    "scipy",
-    "networkx",
-    "numba",
 ]
 
 [project.optional-dependencies]
