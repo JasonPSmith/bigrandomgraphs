@@ -3,6 +3,8 @@ name: Build wheels
 on:
   push:
     tags: ["v*"]
+  release:
+    types: [ published ] # triggers PyPI (when you manually publish a Release on GitHub)
   pull_request:
   workflow_dispatch:
 
