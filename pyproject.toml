@@ -4,12 +4,12 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "bigrandomgraphs"
-version = "0.1.0"
+version = "0.1.1"
 description = "Python package for fast creation of large random graphs"
 readme = "README.md"
 license = { file = "LICENSE" }
 authors = [{ name = "Jason P. Smith" }]
-requires-python = ">=3.9"
+requires-python = ">=3.8"
 
 dependencies = [
     "numpy",
